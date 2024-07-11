@@ -8,11 +8,6 @@ import pandas as pd
 class LakeInflowModel:
     """
     Model the water flow to lake from attachment area.
-    Consider:
-        - Pr: .map, mm/day
-        - Soil moisture : .map, mm, has a critical level as the threshold to transport
-        - Water flow speed: .map, m/timestep, according to DEM or ?
-        - Eva: as a constant? or calc from Penman eq.
     Process:
         - 1. calc soil moisture during pr and eva, max(Pr + soilMoisture - Eva, 0)
         - 2. get the water could be transport (critical moisture threshold), max(1. - soilMoistureMax, 0)
